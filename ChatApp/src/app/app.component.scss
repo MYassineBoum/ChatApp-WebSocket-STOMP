@@ -1,0 +1,78 @@
+
+.box {
+    background-color: #164863;
+    border-radius: 5px;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.conversation {
+    width: 600px;
+    height: 520px;
+    background-color: #9BBEC8;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    overflow-y: scroll;
+    border-top-left-radius: 10px;
+}
+
+p {
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #DDF2FD;
+    width: 560px;
+    height: fit-content;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#going {
+    background-color: #D2DE32;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #164863;
+}
+
+input {
+    width: 520px;
+    height: 50px;
+    margin-right: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 16px;
+    padding: 0 10px;
+    outline: none;
+    border: solid 4px #D2DE32;
+}
+
+button {
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: solid 4px #D2DE32;
+    background-color: #D2DE32;
+    color: #164863;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    border-radius: 0;
+    transition: .3s;
+}
