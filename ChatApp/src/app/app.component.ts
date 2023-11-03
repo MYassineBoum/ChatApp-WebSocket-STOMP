@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   publicMessages: string[] = [];
   private stompClient!: Stomp.Client;
 
+  constructor() {}
+
   ngOnInit() {
       this.connect();
   }
@@ -22,10 +24,13 @@ export class AppComponent implements OnInit {
     this.stompClient = Stomp.over(socket);
     const _this = this;
     this.stompClient.connect({}, function (frame) {
-      _this.stompClient.subscribe('/topic', function(received){
+      _this.stompClient.subscribe('/topic/all', function(received) {
+        console.log(JSON.parse(received.body));
         _this.showMessage(JSON.parse(received.body));
       });
-   });
+    }, function (error) {
+      console.error('WebSocket connection error: ' + error);
+    });
   }
   
   sendMessage() {
@@ -37,8 +42,8 @@ export class AppComponent implements OnInit {
     this.newmessage = "";
   }
 
-  showMessage(message: string) {
-    this.publicMessages.push(message);
+  showMessage(mssg: string) {
+    this.publicMessages.push(mssg);
   }
 
 }
